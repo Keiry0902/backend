@@ -1,4 +1,4 @@
-#configuracion de la base de datps
+#configuracion de la base de datp
 
 #Se usa para conectarse a la base de datos (en este caso, PostgreSQL)
 from sqlalchemy import create_engine

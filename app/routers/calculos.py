@@ -47,6 +47,8 @@ def registros_con_diferencia(encargado: str = None, year: int = None, month: int
 
     return query.all()
 
+
+
 # 2. Total pagado
 @router.get("/total-pagado")
 def total_pagado(encargado: str = None, year: int = None, month: int = None, day: int = None, db: Session = Depends(get_db)):
