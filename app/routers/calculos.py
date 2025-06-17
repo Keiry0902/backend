@@ -47,7 +47,20 @@ def registros_con_diferencia(encargado: str = None, year: int = None, month: int
 
     return query.all()
 
-
+    # Convertir tuplas a diccionarios legibles por JSON
+    return [
+        {
+            "id_number": r[0],
+            "name": r[1],
+            "consult_date": str(r[2]),  # Importante: convertir datetime a string
+            "assistant": r[3],
+            "pagado": r[4],
+            "esperado": r[5],
+            "diferencia": r[6],
+            "estado": r[7]
+        }
+        for r in resultados
+    ]
 
 # 2. Total pagado
 @router.get("/total-pagado")
